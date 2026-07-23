@@ -2,187 +2,530 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Évaluation Word</title>
+<title>Évaluation Finale Word - Gi.Code</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    line-height: 1.5;
-    color: #000;
-    background: #f9fafc;
-  }
-  h1 {
-    text-align: center;
-    color: #0d5a9a;
-  }
-  h2, h3 {
-    color: #0d5a9a;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  table, th, td {
-    border: 1px solid #000;
-  }
-  th, td {
-    padding: 8px;
-    text-align: center;
-  }
-  .section {
-    margin-bottom: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  .instructions {
-    margin: 10px 0;
-  }
-  .carte-cours {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .btn-principal, .btn-secondaire, .btn-pdf {
-    display: inline-block;
-    margin: 0.3em 0;
-    padding: 0.5em 1em;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .btn-principal { background:#0d5a9a; color:white; }
-  .btn-secondaire { background:#e3eef8; color:#0d5a9a; }
-  .btn-pdf { background:#27ae60; color:white; float:right; }
-  ul { list-style-type: disc; margin-left: 20px; }
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    background:#f4f6f9;
+    margin:0;
+    padding:30px;
+    color:#333;
+}
+
+ .hero-photo img{width:180px;height:180px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,.2);border:4px solid #fff;}
+.nav-logo{font-weight:700;font-size:1.3rem;color:#007bff;text-decoration:none;}
+.hero-photo img{width:150px;height:150px;}
+.intro-photo{width:150px;height:150px;border-radius:50%;border:4px solid #fff;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,.3);}
+
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#0d47a1;
+    text-align:center;
+    margin-bottom:5px;
+}
+
+h2{
+    text-align:center;
+    color:#1976d2;
+    margin-bottom:30px;
+}
+
+h3{
+    background:#1976d2;
+    color:white;
+    padding:10px;
+    border-radius:6px;
+}
+
+h4{
+    color:#0d47a1;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+th{
+    background:#1976d2;
+    color:white;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:left;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+.ligne{
+    border-bottom:1px solid #000;
+    height:35px;
+    margin-bottom:10px;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.info p{
+    background:#f1f5f9;
+    padding:10px;
+    border-radius:6px;
+}
+
+.btn{
+    background:#1976d2;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    margin:10px;
+}
+
+.btn:hover{
+    background:#0d47a1;
+}
+
+.actions{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+@media print {
+
+    .actions,
+    button {
+        display: none;
+    }
+
+    body {
+        background: white;
+        margin: 0;
+        padding: 10mm;
+    }
+
+    .container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    table {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        color: black !important;
+    }
+}
+
+input{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    margin-top:5px;
+}
+
+textarea{
+    width:100%;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:10px;
+    resize:vertical;
+}
+
+input[type="radio"]{
+    transform:scale(1.2);
+    margin-right:8px;
+}
+
+textarea{
+    width:100%;
+    min-height:100px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+input[type="text"],
+input[type="date"]{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+
+@media (max-width: 700px) {
+      header img {
+        position: static;
+        margin-bottom: 15px;
+      }
+      header {
+        padding: 80px 20px;
+      }
+      section {
+        margin: 20px;
+        padding: 25px;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: white;
+      padding: 8px;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.2em;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
 </style>
 </head>
 <body>
 
-<h1>Évaluation – Word : Mise en page, Alignement & Tableaux</h1>
-<p><strong>Durée :</strong> 30 minutes</p>
-<p><strong>Matériel :</strong> Word installé sur votre ordinateur</p>
-<button class="btn-pdf" onclick="telechargerPDF()">📄 Télécharger en PDF</button>
+    <div class="container">
+    <header>
+        <div class="hero-photo">
+      <img src="images Gi. Code.jpg" alt="Photo de Mansour Gueye">
+      </div>
+      <div>
+      <h2>👨‍💻 Mansour Gueye – <span class="brand">Gi.Code</span></h2>
+      <h1>Formateur & Développeur Web</h1>
+      <p>📍 Dakar, Sénégal • 💼 Spécialiste en <strong>Word</strong>, <strong>Excel</strong>, <strong>PowerPoint</strong>, HTML, CSS et JavaScript</p>
+      <p>🎯 Passionné par l’éducation numérique et la <strong>formation interactive</strong></p>
+    </header>
+    </div>
+
+
+    <div class="container">
+
+<h1>ÉVALUATION FINALE WORD</h1>
+<h2>Formation Bureautique - Gi.Code</h2>
+
+<div class="actions">
+    <button class="btn" onclick="telechargerPDF()">
+        📥 Télécharger le PDF
+    </button>
+
+    <button class="btn" onclick="corrigerQCM()">
+        ✅ Corriger le QCM
+    </button>
+</div>
+
+<div id="resultat" style="display:none;margin:20px 0;padding:15px;background:#e8f5e9;border-radius:8px;">
+    <h3>Résultat</h3>
+    <p id="score"></p>
+</div>
+
+<div class="info">
+    <p><strong>Date :</strong>
+    <input type="date"></p>
+
+    <p><strong>Durée :</strong>
+    <input type="text" value="2 heures"></p>
+
+    <p><strong>Note :</strong>
+    <input type="text" placeholder="/100"></p>
+
+    <p><strong>Candidat(e) :</strong>
+    <input type="text" placeholder="Nom et prénom"></p>
+</div>
+
+<h3>PARTIE 1 : QCM (20 points)</h3>
+
+<p><strong>1. Quel raccourci permet de copier un texte ?</strong></p>
+
+<label><input type="radio" name="q1" value="0"> Ctrl + X</label><br>
+<label><input type="radio" name="q1" value="4"> Ctrl + C</label><br>
+<label><input type="radio" name="q1" value="0"> Ctrl + V</label><br>
+<label><input type="radio" name="q1" value="0"> Ctrl + A</label>
+
+<p><strong>2. À quoi sert le style « Titre 1 » ?</strong></p>
+
+<label><input type="radio" name="q2" value="0"> Changer la couleur du texte</label><br>
+<label><input type="radio" name="q2" value="4"> Créer un titre principal</label><br>
+<label><input type="radio" name="q2" value="0"> Insérer une image</label><br>
+<label><input type="radio" name="q2" value="0"> Modifier les marge</label>
+
+
+<p><strong>3. Quelle option permet de créer automatiquement un sommaire ?</strong></p>
+
+<label><input type="radio" name="q3" value="0"> Insertion</label><br>
+<label><input type="radio" name="q3" value="0"> Révision</label><br>
+<label><input type="radio" name="q3" value="4"> Références</label><br>
+<label><input type="radio" name="q3" value="0"> Affichage</label>
+
+
+<p><strong>4. Quel format est utilisé pour un document PDF ?</strong></p>
+
+<label><input type="radio" name="q4" value="0"> .docx</label><br>
+<label><input type="radio" name="q4" value="0"> .xlsx</label><br>
+<label><input type="radio" name="q4" value="4"> .pdf</label><br>
+<label><input type="radio" name="q4" value="0"> .pptx</label>
+
+
+<p><strong>5. Quel outil permet d'insérer un tableau ?</strong></p>
+<p>
+<label><input type="radio" name="q5" value="0"> Mise en page</label><br>
+<label><input type="radio" name="q5" value="4"> Insertion</label><br>
+<label><input type="radio" name="q5" value="0"> Affichage</label><br>
+<label><input type="radio" name="q5" value="0"> Révision</label><br>
+</p>
+
+<h3>PARTIE 2 : QUESTIONS COURTES (20 points)</h3>
+
+<p><strong>1. Quelle différence existe-t-il entre « Enregistrer » et « Enregistrer sous » ?</strong></p>
+<textarea rows="4"></textarea>
+
+<p><strong>2. À quoi sert un en-tête ?</strong></p>
+<textarea rows="4"></textarea>
+
+<p><strong>3. À quoi sert un pied de page ?</strong></p>
+<textarea rows="4"></textarea>
+
+<p><strong>4. Citez trois éléments que l'on peut insérer dans un document Word.</strong></p>
+<textarea rows="4"></textarea>
+
+<p><strong>5. Pourquoi utiliser un sommaire automatique ?</strong></p>
+<textarea rows="4"></textarea>
+
+<h3>PARTIE 3 : ÉPREUVE PRATIQUE (60 points)</h3>
+
+<h4>Contexte</h4>
+
+<p>
+Vous êtes secrétaire d'une association nommée :
+<strong>« Jeunesse et Développement »</strong>
+</p>
+
+<h4>Consigne</h4>
+
+<p>
+Créez un document professionnel de <strong>2 pages</strong> contenant :
+</p>
+
+<h4>Page 1</h4>
+
+<ul>
+<li>Une page de garde</li>
+<li>Titre du document</li>
+<li>Nom de l'apprenant</li>
+<li>Date</li>
+<li>Une image</li>
+</ul>
+
+<h4>Page 2</h4>
+
+<p>Un rapport contenant :</p>
+
+<ul>
+<li>Introduction</li>
+<li>Objectifs</li>
+<li>Activités réalisées</li>
+<li>Conclusion</li>
+</ul>
+
+<h4>NB : Le document doit obligatoirement contenir les éléments suivants</h4>
+
+<table>
+<tr>
+<th>Éléments à réaliser</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>Mise en forme correcte du texte</td>
+<td>10 pts</td>
+</tr>
+
+<tr>
+<td>Titres avec Styles Word</td>
+<td>10 pts</td>
+</tr>
+
+<tr>
+<td>Insertion d'une image</td>
+<td>5 pts</td>
+</tr>
+
+<tr>
+<td>Tableau de 4 lignes minimum</td>
+<td>10 pts</td>
+</tr>
+
+<tr>
+<td>En-tête personnalisé</td>
+<td>5 pts</td>
+</tr>
+
+<tr>
+<td>Pied de page avec numéro de page</td>
+<td>5 pts</td>
+</tr>
+
+<tr>
+<td>Sommaire automatique</td>
+<td>10 pts</td>
+</tr>
+
+<tr>
+<td>Exportation en PDF</td>
+<td>5 pts</td>
+</tr>
+
+<tr>
+<th>TOTAL</th>
+<th>60 pts</th>
+</tr>
+</table>
+
+<h3>RÉCAPITULATIF DE LA NOTE</h3>
+
+<table>
+<tr>
+<th>Épreuve</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>Partie 1 : QCM</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Partie 2 : Questions courtes</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Partie 3 : Épreuve pratique</td>
+<td>60</td>
+</tr>
+
+<tr>
+<th>TOTAL</th>
+<th>100</th>
+</tr>
+</table>
+
+<h3>Appréciation du formateur</h3>
+
+<div class="ligne"></div>
+<div class="ligne"></div>
+<div class="ligne"></div>
+
 <br><br>
 
-<div id="coursContainer"></div>
+<p><strong>Signature du formateur :</strong> ____________________________</p>
 
-<!-- Bibliothèque html2pdf (CDN) -->
+</div>
+
+
+<script>
+
+function corrigerQCM(){
+
+    let total = 0;
+
+    const questions = ["q1","q2","q3","q4","q5"];
+
+    questions.forEach(q => {
+
+        const reponse =
+            document.querySelector('input[name="'+q+'"]:checked');
+
+        if(reponse){
+            total += Number(reponse.value);
+        }
+
+    });
+
+    document.getElementById("resultat").style.display="block";
+
+    document.getElementById("score").innerHTML =
+        "<strong>Score QCM :</strong> "
+        + total + " /20";
+
+}
+
+
+</script>
+
+
+
+<script>
+function genererPDF() {
+    window.print();
+}
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-  // === Données du cours intégrées directement ===
-  const cours = [
-    {
-      icone: "🧩",
-      titre: "Partie 2 : Pratique – 5 points",
-      description: "Exercices pratiques pour tester la maîtrise de Microsoft Word : tabulations, mise en page, tableaux et fusion de cellules.",
-      page: "#",
-      fichiers: [
-        { nom: "Consignes complètes (HTML)", url: "https://g-mansour1977.github.io/Evaluation-Gi.-Code/" }
-      ],
-      exercices: [
-        {
-          titre: "1. Tabulations & Alignement",
-          taches: [
-            "Tapez le texte : Nom – Prénom – Date de naissance.",
-            "Ajoutez une tabulation droite à 5,5” et alignez la date de naissance.",
-            "Centrez le titre « Évaluation Word » sur la page."
-          ]
-        },
-        {
-          titre: "2. Marges & Mise en page",
-          taches: [
-            "Changez les marges : Gauche 2 cm, Droite 2 cm, Haut 2,5 cm, Bas 2,5 cm.",
-            "Passez la page en orientation paysage."
-          ]
-        },
-        {
-          titre: "3. Tableaux",
-          taches: [
-            "Insérez un tableau de 4 lignes et 5 colonnes.",
-            "Saisissez les données : Date, Nom, Produit, Quantité, Prix.",
-            "Ajoutez une ligne au-dessus du 03/01/2025 avec : 05/01/2025 | Epsilon | E5 | 20 | $10.",
-            "Appliquez un style de tableau de votre choix."
-          ]
-        },
-        {
-          titre: "4. Fusionner et Diviser",
-          taches: [
-            "Fusionnez la première cellule de la première ligne avec la deuxième cellule pour créer un titre.",
-            "Divisez la cellule du prix de la dernière ligne en deux cellules."
-          ]
-        }
-      ],
-      bareme: {
-        QCM: "5 points (1 point par bonne réponse)",
-        Pratique: {
-          Total: "5 points",
-          Détails: {
-            "Tabulations & alignement": "1,5 pts",
-            "Marges & orientation": "1 pt",
-            "Tableau & saisie des données": "1,5 pts",
-            "Fusion / Division": "1 pt"
-          }
-        }
-      }
-    }
-  ];
+function telechargerPDF() {
 
-  // === Génération dynamique du contenu ===
-  const container = document.getElementById('coursContainer');
-  cours.forEach(c => {
-    const card = document.createElement('div');
-    card.className = 'carte-cours';
-    card.innerHTML = `
-      <h2>${c.icone} ${c.titre}</h2>
-      <p>${c.description}</p>
-      <a href="${c.page}" class="btn-principal">Voir les leçons</a>
-      <ul>
-        ${c.fichiers.map(f => `
-          <li><a href="${f.url}" class="btn-secondaire" download>📥 ${f.nom}</a></li>
-        `).join('')}
-      </ul>
+    const element = document.querySelector(".container");
 
-      <h3>Exercices :</h3>
-      ${c.exercices.map(ex => `
-        <div class="section">
-          <h4>${ex.titre}</h4>
-          <ul>${ex.taches.map(t => `<li>${t}</li>`).join('')}</ul>
-        </div>
-      `).join('')}
-
-      <h3>Barème :</h3>
-      <ul>
-        <li><strong>QCM :</strong> ${c.bareme.QCM}</li>
-        <li><strong>Pratique :</strong> ${c.bareme.Pratique.Total}
-          <ul>
-            ${Object.entries(c.bareme.Pratique.Détails).map(([k,v]) => `<li>${k} : ${v}</li>`).join('')}
-          </ul>
-        </li>
-      </ul>
-    `;
-    container.appendChild(card);
-  });
-
-  // === Fonction de téléchargement PDF ===
-  function telechargerPDF() {
-    const element = document.body;
     const options = {
-      margin: 0.5,
-      filename: 'Evaluation_Word_Pratique.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        margin: 10,
+        filename: 'Evaluation_Finale_Word_GiCode.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: {
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+        }
     };
-    html2pdf().set(options).from(element).save();
-  }
-</script>
 
+    html2pdf().set(options).from(element).save();
+}
+</script>
 </body>
 </html>
